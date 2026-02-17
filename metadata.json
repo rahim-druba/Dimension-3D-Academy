@@ -1,0 +1,8 @@
+{
+  "name": "Dimension 3D Academy",
+  "description": "A high-end, immersive 3D animation and design school website featuring modern UI, hover effects, and AI-powered curriculum advisory.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone"
+  ]
+}

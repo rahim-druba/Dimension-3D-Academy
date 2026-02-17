@@ -1,0 +1,134 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimension 3D Academy | Master the Art of Depth</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #020617;
+            --grid-color: rgba(255, 255, 255, 0.03);
+            --glow-color-top-right: #132e6b;
+            --glow-color-bottom-left: #2a0b2d;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-color);
+            color: #f8fafc;
+            overflow-x: hidden;
+            margin: 0;
+        }
+        .heading-font {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        
+        /* Small Grid Background Pattern */
+        .grid-pattern {
+            background-image: 
+                linear-gradient(var(--grid-color) 1px, transparent 1px),
+                linear-gradient(90deg, var(--grid-color) 1px, transparent 1px);
+            background-size: 24px 24px;
+            background-position: center center;
+        }
+
+        /* Courses layout: when expanded, use a custom column template at lg+ */
+        @media (min-width: 1024px) {
+            .courses-grid-expanded {
+                grid-template-columns: var(--courses-cols, 2.2fr 0.9fr 0.9fr 0.9fr);
+                align-items: stretch;
+            }
+        }
+
+        /* Ambient Glows using #132e6b for top-right and #2a0b2d for bottom-left - Smooth Radial Gradient */
+        .glow-top-right {
+            position: fixed;
+            top: -15%;
+            right: -10%;
+            width: 80vw;
+            height: 80vw;
+            background: radial-gradient(
+                circle at center,
+                var(--glow-color-top-right) 0%,
+                rgba(19, 46, 107, 0.95) 15%,
+                rgba(19, 46, 107, 0.75) 25%,
+                rgba(19, 46, 107, 0.55) 35%,
+                rgba(19, 46, 107, 0.35) 50%,
+                rgba(19, 46, 107, 0.2) 65%,
+                rgba(19, 46, 107, 0.1) 80%,
+                transparent 100%
+            );
+            z-index: -1;
+            opacity: 1;
+            pointer-events: none;
+            filter: blur(40px);
+        }
+        .glow-bottom-left {
+            position: fixed;
+            bottom: -20%;
+            left: -15%;
+            width: 70vw;
+            height: 70vw;
+            background: radial-gradient(
+                circle at center,
+                var(--glow-color-bottom-left) 0%,
+                rgba(42, 11, 45, 0.95) 15%,
+                rgba(42, 11, 45, 0.75) 25%,
+                rgba(42, 11, 45, 0.55) 35%,
+                rgba(42, 11, 45, 0.35) 50%,
+                rgba(42, 11, 45, 0.2) 65%,
+                rgba(42, 11, 45, 0.1) 80%,
+                transparent 100%
+            );
+            z-index: -1;
+            opacity: 1;
+            pointer-events: none;
+            filter: blur(40px);
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #020617;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #334155;
+        }
+
+        .glow-hover {
+            transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .glow-hover:hover {
+            box-shadow: 0 0 50px rgba(168, 85, 247, 0.05);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "react": "https://esm.sh/react@^19.2.4",
+    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+<body class="grid-pattern">
+    <div class="glow-top-right"></div>
+    <div class="glow-bottom-left"></div>
+    <div id="root"></div>
+<script type="module" src="/index.tsx"></script>
+</body>
+</html>
