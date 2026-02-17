@@ -113,22 +113,19 @@
             transform: translateY(-2px);
         }
     </style>
-<script type="importmap">
-{
-  "imports": {
-    "react/": "https://esm.sh/react@^19.2.4/",
-    "react": "https://esm.sh/react@^19.2.4",
-    "@google/genai": "https://esm.sh/@google/genai@^1.38.0",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.4/"
-  }
-}
-</script>
-<link rel="stylesheet" href="/index.css">
 </head>
 <body class="grid-pattern">
     <div class="glow-top-right"></div>
     <div class="glow-bottom-left"></div>
     <div id="root"></div>
-<script type="module" src="/index.tsx"></script>
+    <script>
+      window.addEventListener('error', function(e) {
+        document.getElementById('root').innerHTML = '<div style="padding:2rem;color:#f87171;font-family:monospace;white-space:pre">Load error: ' + (e.message || e) + '</div>';
+      });
+      window.addEventListener('unhandledrejection', function(e) {
+        document.getElementById('root').innerHTML = '<div style="padding:2rem;color:#f87171;font-family:monospace;white-space:pre">Unhandled error: ' + (e.reason?.message || e.reason) + '</div>';
+      });
+    </script>
+    <script type="module" src="/index.tsx"></script>
 </body>
 </html>

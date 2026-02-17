@@ -10,13 +10,6 @@ export interface Course {
   glbFilePath?: string;
 }
 
-export interface AdvisorResponse {
-  careerPath: string;
-  suggestedCourses: string[];
-  toolsToLearn: string[];
-  reasoning: string;
-}
-
 export interface StudentWork {
   id: string;
   studentName: string;

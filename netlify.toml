@@ -1,3 +1,35 @@
 [build]
   command = "npm run build"
   publish = "dist"
+  environment = { NODE_VERSION = "20" }
+
+# Ensure static assets (JS, 3D models, images) are served - order matters
+[[redirects]]
+  from = "/assets/*"
+  to = "/assets/:splat"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/pics/*"
+  to = "/pics/:splat"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/glb/*"
+  to = "/glb/:splat"
+  status = 200
+  force = false
+
+[[redirects]]
+  from = "/scg/*"
+  to = "/scg/:splat"
+  status = 200
+  force = false
+
+# SPA fallback - last
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

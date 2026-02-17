@@ -6,7 +6,6 @@ import FigureCard from './components/FigureCard';
 import Genus2DetailPage from './components/Genus2DetailPage';
 import CircleDetailPage from './components/CircleDetailPage';
 import TorusDetailPage from './components/TorusDetailPage';
-import AdvisorTool from './components/AdvisorTool';
 import ModelViewer from './components/ModelViewer';
 import { COURSES, SHOWCASE, FIGURE_CARDS, FIGURE_BLOCK_IMAGES } from './constants';
 
@@ -60,9 +59,6 @@ const App: React.FC = () => {
             ))}
           </div>
         </section>
-
-        {/* AI Advisor Feature */}
-        <AdvisorTool />
 
         {/* Student Showcase */}
         <section id="showcase" className="py-40 px-6 max-w-7xl mx-auto">
